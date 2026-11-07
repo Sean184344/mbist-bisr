@@ -1,0 +1,134 @@
+{
+  "status": "passed",
+  "finished_utc": "2026-11-07T05:39:05.133194+00:00",
+  "tools": {
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+    "yosys": "Yosys 0.33 (git sha1 2584903a060)",
+    "python": "Python 3.12.3"
+  },
+  "stages": [
+    {
+      "name": "directed_and_matrix",
+      "passed": true
+    },
+    {
+      "name": "synthesis",
+      "passed": true
+    },
+    {
+      "name": "diagnosis_demo",
+      "passed": true
+    },
+    {
+      "name": "independent_campaign",
+      "passed": true
+    },
+    {
+      "name": "bounded_formal",
+      "passed": true
+    },
+    {
+      "name": "bounded_user_port",
+      "passed": true
+    },
+    {
+      "name": "checker_mutations",
+      "passed": true
+    },
+    {
+      "name": "strict_lint",
+      "passed": true
+    },
+    {
+      "name": "verilator_simulation",
+      "passed": true
+    },
+    {
+      "name": "cocotb",
+      "passed": true
+    }
+  ],
+  "skipped": [],
+  "limitations": [
+    "No device timing or vendor RAM mapping",
+    "Formal proofs are bounded and use AW=1 DW=2 SPARES=1",
+    "Verilator simulation covers four representative configurations; Icarus covers fourteen",
+    "Random campaign models static stuck bits; other fault classes use directed examples"
+  ],
+  "campaign": {
+    "seed": 20261105,
+    "passed": 200,
+    "failed": 0
+  },
+  "formal_proofs": [
+    {
+      "latency": 0,
+      "fault": 0,
+      "steps": 55,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; clean or one symbolic stuck-bit row; arbitrary initial RAM; one reset/start"
+    },
+    {
+      "latency": 0,
+      "fault": 1,
+      "steps": 55,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; clean or one symbolic stuck-bit row; arbitrary initial RAM; one reset/start"
+    },
+    {
+      "latency": 1,
+      "fault": 0,
+      "steps": 80,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; clean or one symbolic stuck-bit row; arbitrary initial RAM; one reset/start"
+    },
+    {
+      "latency": 1,
+      "fault": 1,
+      "steps": 80,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; clean or one symbolic stuck-bit row; arbitrary initial RAM; one reset/start"
+    },
+    {
+      "latency": 0,
+      "reset_before_retest": 0,
+      "steps": 125,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; symbolic single faulty row; arbitrary user traffic; two complete MBIST runs"
+    },
+    {
+      "latency": 0,
+      "reset_before_retest": 1,
+      "steps": 125,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; symbolic single faulty row; arbitrary user traffic; two complete MBIST runs"
+    },
+    {
+      "latency": 1,
+      "reset_before_retest": 0,
+      "steps": 175,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; symbolic single faulty row; arbitrary user traffic; two complete MBIST runs"
+    },
+    {
+      "latency": 1,
+      "reset_before_retest": 1,
+      "steps": 175,
+      "passed": true,
+      "scope": "AW=1 DW=2 SPARES=1; symbolic single faulty row; arbitrary user traffic; two complete MBIST runs"
+    }
+  ],
+  "lint_configurations": 42,
+  "cocotb": [
+    {
+      "latency": 0,
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "latency": 1,
+      "tests": 2,
+      "failures": 0
+    }
+  ]
+}
